@@ -1,0 +1,482 @@
+
+{
+ "type": "object",
+ "properties": {
+   "borrower_details": {
+     "type": "object",
+     "properties": {
+       "borrower_id": {
+         "type": "string"
+       },
+       "logo": {
+         "type": "string",
+         "format": "binary"
+       },
+       "location": {
+         "type": "string"
+       },
+       "region": {
+         "type": "string",
+         "enum": [
+           "Africa",
+           "Asia-Pacific",
+           "Eastern Europe/ Russia",
+           "Latin America/ Caribbean",
+           "Middle East",
+           "USA/ Canada",
+           "Western Europe"
+         ]
+       },
+       "sic_code": {
+         "type": "string"
+       },
+       "time_zone": {
+         "type": "string"
+       },
+       "legal_name": {
+         "type": "string"
+       },
+       "primary_borrower": {
+         "type": "boolean"
+       },
+       "borrower_type": {
+         "type": "string",
+         "enum": [
+           "Corporate",
+           "Individuals",
+           "Financial Institutions",
+           "Sovereign",
+           "Other"
+         ]
+       },
+       "country": {
+         "type": "string"
+       },
+       "industry": {
+         "type": "string",
+         "enum": [
+           "Aerospace and Defense",
+           "Agriculture",
+           "Automotive",
+           "Beverage, Food, and Tobacco Processing",
+           "Broadcasting",
+           "Business Services",
+           "Chemicals, Plastics & Rubber",
+           "Construction",
+           "Financial Services",
+           "General Manufacturing",
+           "Government",
+           "Healthcare",
+           "Hotel & Gaming",
+           "Leisure and Entertainment",
+           "Media",
+           "Mining",
+           "Oil and Gas",
+           "Paper & Packaging",
+           "Real Estate",
+           "REITS",
+           "Restaurants",
+           "Retail & Supermarkets",
+           "Services",
+           "Shipping",
+           "Technology",
+           "Telecommunications",
+           "Textiles and Apparel",
+           "Transportation",
+           "Utilities",
+           "Wholesale"
+         ]
+       },
+       "rating": {
+         "type": "string"
+       }
+     }
+   },
+   "borrower_contact_details": {
+     "type": "object",
+     "properties": {
+       "contact_person": {
+         "type": "object",
+         "properties": {
+           "name": {
+             "type": "string"
+           },
+           "email": {
+             "type": "string",
+             "format": "email"
+           },
+           "phone": {
+             "type": "string"
+           },
+           "fax": {
+             "type": "string"
+           },
+           "designation": {
+             "type": "string"
+           },
+           "deal_correspondence": {
+             "type": "boolean"
+           }
+         }
+       }
+     }
+   },
+   "legal_counsels": {
+     "type": "object",
+     "properties": {
+       "borrower": {
+         "type": "object",
+         "properties": {
+           "name": {
+             "type": "string"
+           },
+           "email": {
+             "type": "string",
+             "format": "email"
+           },
+           "phone": {
+             "type": "string"
+           },
+           "fax": {
+             "type": "string"
+           },
+           "designation": {
+             "type": "string"
+           },
+           "deal_correspondence": {
+             "type": "boolean"
+           }
+         }
+       },
+       "guarantor": {
+         "type": "object",
+         "properties": {
+           "name": {
+             "type": "string"
+           },
+           "email": {
+             "type": "string",
+             "format": "email"
+           },
+           "phone": {
+             "type": "string"
+           },
+           "fax": {
+             "type": "string"
+           },
+           "designation": {
+             "type": "string"
+           },
+           "deal_correspondence": {
+             "type": "boolean"
+           }
+         }
+       },
+       "parent": {
+         "type": "object",
+         "properties": {
+           "name": {
+             "type": "string"
+           },
+           "email": {
+             "type": "string",
+             "format": "email"
+           },
+           "phone": {
+             "type": "string"
+           },
+           "fax": {
+             "type": "string"
+           },
+           "designation": {
+             "type": "string"
+           },
+           "deal_correspondence": {
+             "type": "boolean"
+           }
+         }
+       }
+     }
+   },
+   "borrower_account_details": {
+     "type": "object",
+     "properties": {
+       "reference_currency": {
+         "type": "string"
+       },
+       "loan_disbursement": {
+         "type": "string"
+       },
+       "bank_name": {
+         "type": "string"
+       },
+       "account_name": {
+         "type": "string"
+       },
+       "swift_code": {
+         "type": "string"
+       },
+       "iban_code": {
+         "type": "string"
+       },
+       "account_number": {
+         "type": "string"
+       },
+       "address": {
+         "type": "string"
+       }
+     }
+   },
+   "correspondent_bank": {
+     "type": "object",
+     "properties": {
+       "bank_name": {
+         "type": "string"
+       },
+       "swift_code": {
+         "type": "string"
+       },
+       "account_number": {
+         "type": "string"
+       },
+       "currency": {
+         "type": "string"
+       },
+       "account_name": {
+         "type": "string"
+       },
+       "iban_code": {
+         "type": "string"
+       },
+       "bank_address": {
+         "type": "string"
+       }
+     }
+   },
+   "facility_details": {
+     "type": "object",
+     "properties": {
+       "deal_name": {
+         "type": "string"
+       },
+       "deal_id": {
+         "type": "string"
+       },
+       "deal_segregation": {
+         "type": "string",
+         "enum": [
+           "Bilateral",
+           "Syndication with Agent role",
+           "Syndication as Lender with Agent role"
+         ]
+       },
+       "commitment": {
+         "type": "object",
+         "properties": {
+           "total": {
+             "type": "number"
+           },
+           "closing": {
+             "type": "number"
+           },
+           "proposed": {
+             "type": "number"
+           },
+           "current": {
+             "type": "number"
+           }
+         }
+       },
+       "signing_date": {
+         "type": "string",
+         "format": "date"
+       },
+       "maturity_date": {
+         "type": "string",
+         "format": "date"
+       },
+       "reporting_currency": {
+         "type": "string"
+       },
+       "tranche_currencies": {
+         "type": "array",
+         "items": {
+           "type": "string"
+         }
+       },
+       "holiday_calendar_location": {
+         "type": "array",
+         "items": {
+           "type": "string"
+         }
+       },
+       "pricing_options": {
+         "type": "array",
+         "items": {
+           "type": "string"
+         }
+       },
+       "tranches": {
+         "type": "array",
+         "items": {
+           "type": "object",
+           "properties": {
+             "tranche_id": {
+               "type": "string"
+             },
+             "name": {
+               "type": "string"
+             },
+             "currency": {
+               "type": "string"
+             },
+             "amount": {
+               "type": "number"
+             },
+             "tenor": {
+               "type": "string"
+             },
+             "maturity_date": {
+               "type": "string",
+               "format": "date"
+             },
+             "interest_rate": {
+               "type": "number"
+             },
+             "repayment_type": {
+               "type": "string",
+               "enum": [
+                 "Bullet",
+                 "Amortizing",
+                 "Other"
+               ]
+             },
+             "disbursement_date": {
+               "type": "string",
+               "format": "date"
+             },
+             "status": {
+               "type": "string",
+               "enum": [
+                 "Active",
+                 "Inactive",
+                 "Closed",
+                 "Proposed"
+               ]
+             }
+           }
+         }
+       }
+     }
+   },
+   "legal_terms": {
+     "type": "object",
+     "properties": {
+       "holiday_calendars": {
+         "type": "array",
+         "items": {
+           "type": "string"
+         }
+       },
+       "penalty_rate_percent": {
+         "type": "number"
+       },
+       "governing_law": {
+         "type": "string"
+       },
+       "tax_policy": {
+         "type": "string"
+       }
+     }
+   },
+   "covenants": {
+     "type": "array",
+     "items": {
+       "type": "object",
+       "properties": {
+         "clause_no": {
+           "type": "string"
+         },
+         "type": {
+           "type": "string"
+         },
+         "description": {
+           "type": "string"
+         },
+         "attribute": {
+           "type": "string"
+         },
+         "condition": {
+           "type": "string"
+         },
+         "measurement": {
+           "type": "string"
+         },
+         "value": {
+           "type": "number"
+         },
+         "applicable_period": {
+           "type": "string",
+           "format": "date"
+         },
+         "test_period": {
+           "type": "string",
+           "format": "date"
+         }
+       }
+     }
+   },
+   "accordion_features": {
+     "type": "object",
+     "description": "Include only if the facility includes an accordion (incremental) option.",
+     "properties": {
+       "max_increase_amount": {
+         "type": "number"
+       },
+       "approval_required": {
+         "type": "boolean"
+       },
+       "increase_conditions": {
+         "type": "string"
+       }
+     }
+   },
+   "bridge_loan_details": {
+     "type": "object",
+     "description": "Include only if this is a bridge loan facility.",
+     "properties": {
+       "is_bridge_loan": {
+         "type": "boolean"
+       },
+       "bridge_to": {
+         "type": "string"
+       },
+       "expected_refinance_date": {
+         "type": "string",
+         "format": "date"
+       },
+       "step_up_pricing_terms": {
+         "type": "string"
+       }
+     }
+   },
+   "acquisition_details": {
+     "type": "object",
+     "description": "Include only if the loan is for acquisition financing.",
+     "properties": {
+       "target_company_name": {
+         "type": "string"
+       },
+       "acquisition_type": {
+         "type": "string"
+       },
+       "acquisition_value": {
+         "type": "number"
+       },
+       "acquisition_conditions": {
+         "type": "string"
+       }
+     }
+   }
+ }
+}
